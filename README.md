@@ -10,7 +10,7 @@
   - Use Content Security Policy (CSP)
   - Avoid `innerHTML`, `document.write`
 
----
+
 
 ### ✅ SQL Injection
 - **Types**: Classic, Blind, Union-based, Time-based
@@ -20,7 +20,7 @@
   - Avoid dynamic SQL
   - Restrict DB permissions
 
----
+
 
 ### ✅ Command Injection
 - **Payload**: `ping 127.0.0.1; rm -rf /`
@@ -29,7 +29,7 @@
   - Use `escapeshellarg()` and `escapeshellcmd()`
   - Avoid unsanitized shell access
 
----
+
 
 ### ✅ Path Traversal
 - **Payload**: `../../../../etc/passwd`
@@ -38,7 +38,7 @@
   - Restrict to allowlisted directories
   - Block `../`, `/`, `\` in inputs
 
----
+
 
 ## 🌍 2. Request-Based Attacks
 
@@ -49,7 +49,7 @@
   - `SameSite=Strict` cookies
   - Action confirmations
 
----
+
 
 ### ✅ SSRF (Server-Side Request Forgery)
 - **Payload**: `http://127.0.0.1:3306`
@@ -58,7 +58,7 @@
   - Block internal IPs (127.0.0.1, 169.254.x.x)
   - Allowlist domains
 
----
+
 
 ### ✅ Open Redirect
 - **Payload**: `/redirect?to=http://evil.com`
@@ -66,7 +66,7 @@
   - Only allow internal redirects
   - Validate URLs before redirect
 
----
+
 
 ## 🧠 3. Logic Flaws & Abuse
 
@@ -79,7 +79,7 @@
   - Rate limiting
   - Security reviews
 
----
+
 
 ### ✅ Broken Access Control
 - **Example**: Accessing `/admin?id=2` without permission
@@ -87,7 +87,7 @@
   - Role-based access checks on backend
   - Avoid relying on frontend auth
 
----
+
 
 ### ✅ Rate Limiting Bypass
 - **Example**: Brute-force using rotated headers
@@ -95,7 +95,7 @@
   - Normalize IP headers (`X-Forwarded-For`)
   - Lockout, CAPTCHA
 
----
+
 
 ## 🔁 4. Session & Token Security
 
@@ -110,7 +110,7 @@
   - Enforce secure JWT validation
   - Use expiration, revocation strategies
 
----
+
 
 ## 🛠️ 5. Network-Level Attacks
 
@@ -123,7 +123,7 @@
   - Rate limiting
   - Auto-scaling
 
----
+
 
 ### ✅ DNS Spoofing
 - **Mitigations**:
@@ -135,7 +135,7 @@
   - Don't rely on IP for auth
   - Use token-based access control
 
----
+
 
 ## 📤 6. Data Leakage & Injection
 
@@ -145,7 +145,7 @@
   - Disable verbose errors in production
   - Block access to sensitive files
 
----
+
 
 ### ✅ File Upload Attacks
 - **Risks**: RCE via fake image/PHP file
@@ -154,7 +154,7 @@
   - Store files outside web root
   - Sanitize filename and scan for viruses
 
----
+
 
 ### ✅ Log Injection
 - **Payload**: `\n[ERROR] attacker input`
@@ -162,7 +162,7 @@
   - Sanitize log entries
   - Use structured logging
 
----
+
 
 ## 🕵️ 7. Scraping, Sniffing, Spoofing
 
@@ -172,7 +172,7 @@
   - CAPTCHA
   - API keys and request verification
 
----
+
 
 ### ✅ Packet Sniffing
 - **Risk**: Data over HTTP
@@ -180,7 +180,7 @@
   - Enforce HTTPS
   - Use HSTS
 
----
+
 
 ### ✅ Spoofing (User-Agent, IP, identity)
 - **Mitigations**:
@@ -188,7 +188,7 @@
   - Device fingerprinting
   - Avoid trusting headers blindly
 
----
+
 
 ## 🔧 8. Secure Headers Checklist
 
@@ -200,7 +200,7 @@
 | `Content-Security-Policy` | Block XSS |
 | `Referrer-Policy: no-referrer` | Hide referer |
 
----
+
 
 ## 💾 9. Cryptography & Storage
 
@@ -210,7 +210,7 @@
 - Never store secrets in code; use `.env` or secure vaults
 - Always use HTTPS
 
----
+
 
 ## 🛠 Tools & Testing
 
@@ -223,7 +223,7 @@
 | wpscan | WordPress vulnerability scanner |
 | Nikto | Web server scanner |
 
----
+
 
 ## 🧠 Security Principles to Remember
 
@@ -233,6 +233,6 @@
 - **Secure by Default**: Harden configs and remove dev artifacts
 - **Don’t Roll Your Own Crypto**: Use tested libraries
 
----
+
 
 > 🔒 Stay updated with OWASP Top 10 and CVEs relevant to your tech stack.
